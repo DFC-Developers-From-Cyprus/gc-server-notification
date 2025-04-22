@@ -1,6 +1,7 @@
 import uuid
 from django.db import models
 
+
 class Notification(models.Model):
     uuid = models.UUIDField(
         primary_key=True,
