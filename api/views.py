@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 
 # Email
-from .utils import send_email
+from .tasks import send_email_task
 
 # API
 from rest_framework import generics
@@ -17,7 +17,7 @@ class NotificationAPIView(generics.ListAPIView):
 
 # View to check that SMTP works
 def smtp_test_view(request):
-    send_email(
+    send_email_task.delay(
         subject="SMTP Works!",
         message="This is the test mail.",
         to_email="kirill.dorokh@gmail.com"
