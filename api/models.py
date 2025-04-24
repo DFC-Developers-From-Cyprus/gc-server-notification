@@ -3,11 +3,7 @@ from django.db import models
 
 
 class Notification(models.Model):
-    uuid = models.UUIDField(
-        primary_key=True,
-        default=uuid.uuid4,
-        editable=False
-    )
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user_uuid = models.UUIDField()
     message = models.TextField()
     type = models.CharField(max_length=100)

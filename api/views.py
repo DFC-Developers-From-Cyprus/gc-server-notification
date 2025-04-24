@@ -20,10 +20,6 @@ def smtp_test_view(request):
     send_email_task.delay(
         subject="SMTP Works!",
         message="This is the test mail.",
-        to_email="kirill.dorokh@gmail.com"
+        to_email="kirill.dorokh@gmail.com",
     )
     return HttpResponse("Email has been sent")
-
-
-
-
